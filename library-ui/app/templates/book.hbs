@@ -1,0 +1,23 @@
+<div class="panel-heading">
+  <div class="search">
+    {{input type="text" placeholder="Search by Book Title or ISBN" value=search}}
+  </div>
+
+  {{#if (can "create book")}}
+    {{#link-to "book.create" class="btn-new"}}
+      <div class="sr-only">Add New Book</div>
+    {{/link-to}}
+  {{/if}}
+</div>
+
+<div class="panel-content">
+  <h3 class="panel-title">Books</h3>
+
+  <ul class="collection">
+    {{#each model as |book|}}
+      {{book-list-item tagName="li" model=book}}
+    {{/each}}
+  </ul>
+</div>
+
+{{liquid-outlet class="slide-container"}}

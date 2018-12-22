@@ -1,0 +1,23 @@
+{{#link-to "author"}}
+<div class="slide-out-bg"></div>
+{{/link-to}}
+
+<div class="slide-out">
+  <div class="slide-out-card">
+    {{#link-to "author" class="btn-back"}}
+      <span class="sr-only">Back</span>
+    {{/link-to}}
+
+    <div class="slide-out-heading">
+      <div class="title">
+        <h3>New Author</h3>
+      </div>
+    </div>
+
+    <div class="slide-out-content">
+      {{author-form author=model onsubmit=(action "saveAuthor")}}
+    </div>
+  </div>
+</div>
+
+{{outlet}}
